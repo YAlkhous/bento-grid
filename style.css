@@ -1,0 +1,225 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Purple-100: hsl(254, 88%, 90%);
+  --Purple-500: hsl(256, 67%, 59%);
+
+  --Yellow-100: hsl(31, 66%, 93%);
+  --Yellow-500: hsl(39, 100%, 71%);
+
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 7%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  display: grid;
+  place-content: center;
+}
+
+.xlg-text {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.lg-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.md-text {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sm-text {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.bento-grid {
+  max-width: 650px;
+  margin: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 35px;
+  grid-template-areas:
+    "box1 box2 box2 box3"
+    "box1 box2 box2 box3"
+    "box1 box2 box2 box3"
+    "box1 box2 box2 box3"
+    "box1 box5 box6 box3"
+    "box4 box5 box6 box3"
+    "box4 box5 box6 box3"
+    "box4 box7 box8 box8"
+    "box4 box7 box8 box8"
+    "box4 box7 box8 box8";
+}
+
+.bento-grid .item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.bento-grid .item:nth-child(1) {
+  background-color: var(--Yellow-100);
+}
+
+.bento-grid .item:nth-child(2),
+.bento-grid .item:nth-child(8) {
+  background-color: var(--Purple-500);
+  color: var(--White);
+}
+
+.bento-grid .item:nth-child(3) {
+  background-color: var(--Purple-100);
+}
+
+.bento-grid .item:nth-child(4),
+.bento-grid .item:nth-child(6) {
+  background-color: var(--Yellow-500);
+}
+
+.bento-grid .item:nth-child(5),
+.bento-grid .item:nth-child(7) {
+  background-color: var(--White);
+}
+
+.bento-grid .item:nth-child(1) {
+  grid-area: box1;
+  letter-spacing: -3px;
+  padding: 2rem 1rem 0 1.5rem;
+}
+
+.bento-grid .item:nth-child(1) em {
+  color: var(--Purple-500);
+}
+
+.bento-grid .item:nth-child(1) img {
+  margin-top: 1rem;
+}
+
+.bento-grid .item:nth-child(2) {
+  grid-area: box2;
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bento-grid .item:nth-child(2) img {
+  width: 100px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.bento-grid .item:nth-child(2) span {
+  color: var(--Yellow-500);
+}
+
+.bento-grid .item:nth-child(3) {
+  grid-area: box3;
+  position: relative;
+  padding: 2rem 0.5rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bento-grid .item:nth-child(3) .md-text {
+  letter-spacing: -1.5px;
+  margin-bottom: 3rem;
+}
+
+.bento-grid .item:nth-child(3) img {
+  position: absolute;
+  height: 180px;
+  top: 75px;
+  object-fit: cover;
+  object-position: left;
+}
+
+.bento-grid .item:nth-child(4) {
+  grid-area: box4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.75rem;
+}
+.bento-grid .item:nth-child(4) p {
+  letter-spacing: -3px;
+}
+.bento-grid .item:nth-child(4) img {
+}
+.bento-grid .item:nth-child(5) {
+  grid-area: box5;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bento-grid .item:nth-child(5) img {
+  position: absolute;
+  height: 33px;
+  top: 1rem;
+}
+.bento-grid .item:nth-child(5) .md-text {
+  margin-top: 1rem;
+  letter-spacing: -1px;
+}
+.bento-grid .item:nth-child(6) {
+  grid-area: box6;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: relative;
+}
+.bento-grid .item:nth-child(6) img {
+  position: absolute;
+  top: 5rem;
+  margin-top: 0.75rem;
+  width: 110px;
+}
+
+.bento-grid .item:nth-child(6) .md-text {
+  letter-spacing: -1px;
+}
+.bento-grid .item:nth-child(7) {
+  grid-area: box7;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  justify-content: space-between;
+}
+
+.bento-grid .item:nth-child(8) {
+  grid-area: box8;
+  display: flex;
+
+  align-content: center;
+  padding: 1rem;
+}
+.bento-grid .item:nth-child(8) img {
+  top: 1rem;
+  left: 1rem;
+}
+.bento-grid .item:nth-child(8) .lg-text {
+  letter-spacing: -2px;
+  align-self: center;
+}
